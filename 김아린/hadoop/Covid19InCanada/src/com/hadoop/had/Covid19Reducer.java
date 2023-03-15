@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1ba469a25c6649f1bc4725b9dcf3db081b3729221adfa419ca78e8350352c42
-size 710
+package com.hadoop.had;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.log4j.Logger;
+
+public class Covid19Reducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    static Logger logger = Logger.getLogger(Covid19Reducer.class);
+    
+    public void reduce(Text _key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+   	 int maxValue = Integer.MIN_VALUE;
+   	 
+   	 // process values
+   	 for (IntWritable val : values) {
+   		 maxValue = Math.max(maxValue, val.get());
+   	 }
+   	 context.write(_key, new IntWritable(maxValue));
+    }
+
+}
+
