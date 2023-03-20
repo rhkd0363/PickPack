@@ -1,5 +1,9 @@
-import java.util.ArrayList;
+package com.ssafy.place.entity;
 
+import lombok.Getter;
+
+import java.util.ArrayList;
+@Getter
 public class Place {
     String business_status;
     Geometry geometry;
@@ -39,3 +43,4 @@ public class Place {
         this.vicinity = vicinity;
     }
 }
+
