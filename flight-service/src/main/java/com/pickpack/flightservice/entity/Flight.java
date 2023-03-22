@@ -1,25 +1,3 @@
-package com.pickpack.flightservice.entity;
-
-import javax.persistence.*;
-
-@Entity
-public class Flight {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ticketId")
-    private String id;
-    private String ticketId;
-    private String departure;
-    private String destination;
-    private String waitTime;
-    private String depTime;
-    private String depDate;
-    private String arrTime;
-    private String arrDate;
-    private String flightTime;
-    private String code;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ticketId")
-    private Ticket ticket;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9e20480bc4e93f7d715149b4cb138347636bc1e48ad2df546a6a4d7a144b53d6
+size 584
