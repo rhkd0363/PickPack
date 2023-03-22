@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe7c8e0b45d8afaa73f1e7ef609babbc3407156ebacbee5f882cdc9c64814f82
-size 520
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
+const WorldMap = () => {
+  const position = [51.505, -0.09];
+  return (
+    <>
+      <MapContainer center={position} zoom={2} style={{ height: "400px" }}>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Marker position={position}>
+          <Popup>팝업</Popup>
+        </Marker>
+      </MapContainer>
+    </>
+  );
+};
+
+export default WorldMap;
