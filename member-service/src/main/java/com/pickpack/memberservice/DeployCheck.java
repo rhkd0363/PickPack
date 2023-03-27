@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0257826ba1c5068906fbb5b380f5d286f94e40a129867c943b871d4247b3a8a3
-size 663
+package com.pickpack.memberservice;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+@RestController
+@RequestMapping("/api/member/")
+@Slf4j
+public class DeployCheck {
+
+    @GetMapping("/check")
+    public String welcomeCheck(){
+        Date today = new Date();
+        System.out.println(today);
+        System.out.println(LocalDateTime.now());
+        return "Welcome to the 🎄 member-service";
+    }
+
+}

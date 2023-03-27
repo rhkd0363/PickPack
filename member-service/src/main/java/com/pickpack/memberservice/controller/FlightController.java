@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb4a9d4d1f532f8e349fb1f7aaa8236d9962c2fdae59541de6fc80d22630e771
-size 429
+package com.pickpack.memberservice.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/member")
+public class FlightController {
+
+    @GetMapping("/health3")
+    public String healthCheck(){
+        return "this is flightController";
+    }
+
+
+
+}
