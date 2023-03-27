@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18be1daf6a6b1a494bd4adc5b2835345553906417ce8ad1bd9c864abd66fe001
-size 403
+package com.pickpack.flightservice.api.request;
+
+import com.pickpack.flightservice.dto.flight.FilterDto;
+import com.pickpack.flightservice.dto.flight.OneWayInfoDto;
+import lombok.*;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
+public class OneWayTicketReq {
+    private long memberId;
+    private OneWayInfoDto info;
+    private FilterDto filter;
+    private String sortType;
+}
