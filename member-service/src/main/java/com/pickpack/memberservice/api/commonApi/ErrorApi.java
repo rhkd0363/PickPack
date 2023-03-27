@@ -1,14 +1,3 @@
-package com.pickpack.memberservice.api.commonApi;
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@RequiredArgsConstructor
-public class ErrorApi {
-
-    private final String message;
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ca5ede5e312b8a9e500384d060e9b8c65ba4643abeca973dd675eb2a1ed90c6c
+size 238
