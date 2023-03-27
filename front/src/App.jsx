@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c20bc54a604bc6baf516e49fa22810ffcd562e29179bf1968aea8a027e9d3af4
-size 463
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Main from "./pages/pick/main/Main";
+import NavBar from "./components/common/navbar/NavBar";
+import Footer from "./components/common/footer/Footer";
+
+function App() {
+  return (
+    <div className="App">
+      <NavBar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
