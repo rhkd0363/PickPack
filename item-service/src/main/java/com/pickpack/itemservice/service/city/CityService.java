@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f52088428f8f58719f4171ea1ce2fd1b5494ec0eb623c4abe38d4ed00a5a68f8
-size 753
+package com.pickpack.itemservice.service.city;
+
+import com.pickpack.itemservice.entity.City;
+import com.pickpack.itemservice.repository.city.CityRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class CityService {
+    private final CityRepository cityRepository;
+
+    /**
+     * @return 도시 이름으로 오름차순 정렬한 도시 목록
+     */
+    public List<City> getCityList(){
+        List<City> all = cityRepository.findAll();
+        log.info(all.toString());
+        return cityRepository.findAll(Sort.by(Sort.Direction.ASC, "cityName"));
+    }
+}
