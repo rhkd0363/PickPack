@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce79066eb2cbe368709ea758164ce59be460fb449898db601115861629d10e55
-size 423
+package com.pickpack.itemservice.entity;
+
+import javax.persistence.*;
+
+@Entity
+public class Soldout {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "soldout_id")
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private Item item;
+}
