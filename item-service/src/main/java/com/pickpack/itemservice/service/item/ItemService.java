@@ -1,16 +1,3 @@
-package com.pickpack.itemservice.service.item;
-
-import com.pickpack.itemservice.repository.item.ItemRepository;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-@Service
-@Slf4j
-@AllArgsConstructor
-public class ItemService {
-    private final ItemRepository itemRepository;
-
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab04dd28fc2f7ab0080b42a5ec3cdb2a6fd52ad76d2dafff47c76158d0551dbb
+size 2767
