@@ -1,36 +1,3 @@
-package com.pickpack.itemservice.entity;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.List;
-
-
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
-public class Member {
-
-    @Column(name = "member_id")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String mid;
-    private String pwd;
-    private String nickname;
-
-    @OneToMany(mappedBy = "member")
-    private List<MemberChatroom> memberChatroomList;
-
-    @OneToMany(mappedBy = "member")
-    private List<Item> itemList;
-
-    @OneToMany(mappedBy = "member")
-    private List<ItemLike> itemLikeList;
-
-    @OneToMany(mappedBy = "member")
-    private List<Soldout> soldoutList;
-
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cc3c96d1ee96556aaae338d18d89b9d6c87f516bf404d5ba35cbb713dbb70ceb
+size 745

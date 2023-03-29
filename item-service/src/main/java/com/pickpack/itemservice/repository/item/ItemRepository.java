@@ -1,11 +1,3 @@
-package com.pickpack.itemservice.repository.item;
-
-import com.pickpack.itemservice.entity.Category;
-import com.pickpack.itemservice.entity.Item;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
-
-public interface ItemRepository extends JpaRepository<Item, Long>, ItemRepositoryCustom{
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b25f7c359706ccb47e63da405a61b7a2ba73ad182c89f1f70ff8939ea68ae309
+size 377
