@@ -1,3 +1,68 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09485ff8a578c5368b0ef653cc3e4cfc796633d5c26ca8fd3129cbb0d5981086
-size 2751
+package com.pickpack.chatservice.config;
+
+import com.pickpack.chatservice.service.chat.pubsub.RedisSubscriber;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.ChannelTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+@RequiredArgsConstructor
+@Configuration
+public class RedisConfig {
+    @Bean
+    public ChannelTopic channelTopic(){
+        return new ChannelTopic("chatroom");
+    }
+    @Value("${spring.data.redis.host}")
+    private String host;
+
+    @Value("${spring.data.redis.port}")
+    private int port;
+
+    @Bean
+    public LettuceConnectionFactory redisConnectionFactory() {
+        return new LettuceConnectionFactory(host, port);
+    }
+
+    /**
+     * redis에 발행(publish)된 메시지 처리를 위한 리스너 설정
+     */
+    @Bean
+    public RedisMessageListenerContainer redisMessageListener(RedisConnectionFactory connectionFactory,
+                                                              MessageListenerAdapter listenerAdapter,
+                                                              ChannelTopic channelTopic) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        container.addMessageListener(listenerAdapter, channelTopic);
+        return container;
+    }
+
+    /**
+     * 실제 메시지를 처리하는 subscriber 설정 추가
+     */
+    @Bean
+    public MessageListenerAdapter listenerAdapter(RedisSubscriber subscriber) {
+        return new MessageListenerAdapter(subscriber, "sendMessage");
+    }
+
+
+    /**
+     * 어플리케이션에서 사용할 redisTemplate 설정
+     */
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory)  {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(connectionFactory);
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(String.class));
+        return redisTemplate;
+    }
+}
