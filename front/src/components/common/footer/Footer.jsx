@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1db78a9f3e8991872ef1de4f4012396683b2d6aeaf41a26302bcbf95a8f4edd
-size 78
+import styled from "styled-components";
+
+const Footer = () => {
+  return (
+    <FootSection>
+        <span className="foot-inner">&copy; PICK&PACKER</span>
+    </FootSection>
+  );
+};
+
+const FootSection = styled.div`
+  height: 48px;
+  background: #432c7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .foot-inner {
+    width: 1200px;
+    color: white;
+    font-weight: bold;
+    margin: 0 28px;
+`;
+
+export default Footer;
+
