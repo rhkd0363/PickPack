@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6c1126b6c1cacf94e4fbc6d974f0a1cd3963e7068aba53e0892fd2a0d22c900
-size 570
+package com.pickpack.itemservice.entity;
+
+import javax.persistence.*;
+
+@Entity
+public class ItemLike {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "item_like_id")
+    private Long id;
+
+    private boolean isDelete;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private Item item;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+//   ====== 연관관계 메서드 ======
+    public void setItem(Item item) {
+        this.item = item;
+    }
+}
+
+
