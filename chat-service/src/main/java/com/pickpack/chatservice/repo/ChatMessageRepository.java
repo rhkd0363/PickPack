@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47c8dad7382899474de4501fb538b190226426564971b0682897c234a1b2a593
-size 450
+package com.pickpack.chatservice.repo;
+
+import com.pickpack.chatservice.entity.ChatMessage;
+import com.pickpack.chatservice.entity.ChatRoom;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.sql.Timestamp;
+import java.util.List;
+
+public interface ChatMessageRepository extends JpaRepository<ChatMessage, String> {
+    List<ChatMessage> findChatMessagesByTimeAfterAndChatRoomOrderByTime(Timestamp time, ChatRoom chatRoom);
+
+}

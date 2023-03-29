@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b24eeea7753bc49bedefa7b2fd70a3b25d6d7ca56e2f475116aa1971a2386d32
-size 1489
+package com.pickpack.chatservice.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.util.List;
+
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
+@ToString
+public class Member{
+
+    @Column(name = "member_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String mid;
+    private String pwd;
+    private String nickname;
+    private String img_url;
+
+    @OneToMany(mappedBy = "member")
+    private List<Item> itemList;
+
+    @OneToMany(mappedBy = "member")
+    private List<Soldout> soldoutList;
+
+//    @Builder
+//    public Member(Long id, String mid, String pwd, String nickname, String img_url, List<OnewayTicketLike> onewayTicketLikeList, List<RoundTicketLike> roundTicketLikeList, List<MemberChatroom> memberChatroomList, List<Item> itemList, List<ItemLike> itemLikeList, List<Soldout> soldoutList) {
+//        this.id = id;
+//        this.mid = mid;
+//        this.pwd = pwd;
+//        this.nickname = nickname;
+//        this.img_url = img_url;
+//        this.onewayTicketLikeList = onewayTicketLikeList;
+//        this.roundTicketLikeList = roundTicketLikeList;
+//        this.memberChatroomList = memberChatroomList;
+//        this.itemList = itemList;
+//        this.itemLikeList = itemLikeList;
+//        this.soldoutList = soldoutList;
+//    }
+}
+

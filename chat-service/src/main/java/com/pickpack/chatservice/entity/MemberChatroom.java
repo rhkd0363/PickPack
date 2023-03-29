@@ -2,20 +2,17 @@ package com.pickpack.chatservice.entity;
 
 import javax.persistence.*;
 
-
 @Entity
-public class Soldout {
+public class MemberChatroom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "soldout_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
-    private Item item;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Chatroom chatroom;
 }
+
