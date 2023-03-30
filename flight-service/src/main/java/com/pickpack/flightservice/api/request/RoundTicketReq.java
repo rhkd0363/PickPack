@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce4cd818e8481151f7be6c9eb2ee435de04fabb9c7cd6f46c75556ea819fbea7
-size 489
+package com.pickpack.flightservice.api.request;
+
+import com.pickpack.flightservice.dto.flight.FilterDto;
+import com.pickpack.flightservice.dto.flight.PageableDto;
+import com.pickpack.flightservice.dto.flight.RoundInfoDto;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
+public class RoundTicketReq {
+    private long memberId;
+    private RoundInfoDto info;
+    private FilterDto filter;
+    private PageableDto pageable;
+}
