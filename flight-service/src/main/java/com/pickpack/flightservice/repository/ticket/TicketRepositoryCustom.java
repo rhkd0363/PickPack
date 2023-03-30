@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8867ca94a721410fdcd65dc4446822bb0b21ab2a65992a2b0ea5ba173e1de5a
-size 772
+package com.pickpack.flightservice.repository.ticket;
+
+import com.pickpack.flightservice.entity.Ticket;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
+
+public interface TicketRepositoryCustom {
+    List<Ticket> findAllTickets(Pageable pageable, String departure, String destination, String date, int minPrice, int maxPrice);
+    List<Ticket> findWaypoint0or1Tickets(Pageable pageable, String departure, String destination, String date, int minPrice, int maxPrice, int waypointNum);
+    List<Ticket> findWaypointIsGraterThanTickets(Pageable pageable, String departure, String destination, String date, int minPrice, int maxPrice, int waypointNum);
+}

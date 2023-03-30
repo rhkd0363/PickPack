@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0351c520e5ac3ba75c430cbedcdc1f5ad7fd92454fa16416796c25ee8cda43db
-size 293
+package com.pickpack.flightservice.repository.tendency;
+
+import com.pickpack.flightservice.entity.Tendency;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TendencyRepository extends JpaRepository<Tendency, Long> {
+    Tendency findByTicketId(Long ticketId);
+}
