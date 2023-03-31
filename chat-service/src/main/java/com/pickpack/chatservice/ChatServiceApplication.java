@@ -1,15 +1,3 @@
-package com.pickpack.chatservice;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
-
-@SpringBootApplication
-@EnableScheduling
-public class ChatServiceApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ChatServiceApplication.class, args);
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e75f7b6afcf6c58b5a0c911710242c24b183a775be2452d6489627fbb734329f
+size 499
