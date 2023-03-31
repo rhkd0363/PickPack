@@ -1,33 +1,3 @@
-package com.pickpack.flightservice.entity;
-
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
-@Entity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Flight {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "flight_id")
-    private Long id;
-    private Long ticketId;
-    private String waitTime;
-    private String depTime;
-    private String depDate;
-    private String depName;
-    private String depCode;
-    private String arrTime;
-    private String arrDate;
-    private String arrName;
-    private String arrCode;
-    private String flightTime;
-    private String code;
-    private String waypointName;
-    private String codeshareName;
-    private int plusDate;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6729364fb9dba9529dc7451c094f7902182941306b5a9d899a19439bc1322d8d
+size 816

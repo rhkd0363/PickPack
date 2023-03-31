@@ -1,16 +1,3 @@
-package com.pickpack.flightservice.dto.flight;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
-public class RoundInfoDto {
-    private String departure;
-    private String destination;
-    private String depDate;
-    private String arrDate;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:660239fa7bf9b48e0cdd3cdd4df8ec195a8e5f1f6ca420f3152bd45dc0b3498f
+size 372
