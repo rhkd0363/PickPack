@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:814a58b03364388503db56eff8a8dae6df71b18fd1ca2f6cfbc83222668c2db7
-size 440
+package com.pickpack.memberservice.entity;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Chatroom {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "chatroom_id")
+    private Long id;
+
+    @OneToMany(mappedBy = "chatroom")
+    private List<MemberChatroom> memberChatroomList;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private Item item;
+
+}

@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7064b5ad5443bd5a6f68b5bddf1cac5dd9b030cd17fdccc8b9e8bf79ecbf0541
-size 1286
+package com.pickpack.memberservice.controller;
+
+import com.pickpack.memberservice.dto.member.FindRespDto;
+import com.pickpack.memberservice.dto.member.JoinReqDto;
+import com.pickpack.memberservice.dto.member.JoinRespDto;
+import com.pickpack.memberservice.service.MemberService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/member")
+@RequiredArgsConstructor
+public class MemberController {
+
+    private final MemberService memberService;
+
+    @GetMapping("/health1")
+    public String healthCheck(){
+        return "this is memberController";
+    }
+
+    /**
+     * 회원가입
+     */
+
+    @PostMapping("/join")
+    public ResponseEntity<?> join(@RequestBody JoinReqDto joinReqDto){
+        JoinRespDto joinRespDto = memberService.join(joinReqDto);
+        return new ResponseEntity<>(joinRespDto, HttpStatus.CREATED);
+    }
+
+    /**
+     *  회원 정보 조회
+     */
+    @GetMapping("/{memberId}")
+    public ResponseEntity<?> info(@PathVariable Long memberId){
+        FindRespDto findRespDto = memberService.findMember(memberId);
+        return new ResponseEntity<>(findRespDto, HttpStatus.OK);
+    }
+
+
+}

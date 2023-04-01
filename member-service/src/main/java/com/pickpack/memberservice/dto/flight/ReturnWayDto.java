@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4949e1a6d15a90b22f24bff252b25d658db789ffa01eb634b354a33615c1350
-size 388
+package com.pickpack.memberservice.dto.flight;
+
+import com.pickpack.memberservice.entity.Flight;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ReturnWayDto {
+    private TicketInfoDto ticket;
+    private List<Flight> flightList;
+
+}

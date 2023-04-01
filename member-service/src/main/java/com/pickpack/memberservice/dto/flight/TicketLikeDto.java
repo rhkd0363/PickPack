@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96ce90dfd5f41950f9fa5546b02300bcf202091958af392992f70106f36e0c31
-size 471
+package com.pickpack.memberservice.dto.flight;
+
+import com.pickpack.memberservice.entity.Flight;
+import com.pickpack.memberservice.entity.Ticket;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Setter
+public class TicketLikeDto {
+    private Boolean isLike;
+    private Integer wantedPrice;
+    private Long ticketId;
+    private TicketInfoDto ticket;
+    private List<Flight> flightList;
+
+}

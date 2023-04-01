@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:506bdc43d11241e2dd975ed7e8e67d4cbf1b119fcc4f3fcbec48b87f14bed795
-size 642
+package com.pickpack.memberservice.repository;
+
+import com.pickpack.memberservice.dto.flight.RoundTicketLikeDto;
+import com.pickpack.memberservice.dto.flight.TicketInfoDto;
+import com.pickpack.memberservice.dto.flight.TicketLikeDto;
+import com.pickpack.memberservice.entity.Flight;
+import com.pickpack.memberservice.entity.Ticket;
+
+import java.util.List;
+
+public interface TicketRepositoryCustom {
+
+    List<TicketLikeDto> findOnewayTicketLike(Long memberId);
+
+    List<Flight> findTicketLikeAboutFlight(Long ticketId);
+
+    TicketInfoDto findTicketInfo(Long ticketId);
+
+    List<RoundTicketLikeDto> findRoundwayTicketLike(Long memberId);
+
+}

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:876e351d05bfb2515e037bec43c36791395055951d8c8836a82e657f7ebcdd7e
-size 292
+package com.pickpack.memberservice.repository;
+
+import com.pickpack.memberservice.dto.item.ItemDto;
+
+import java.util.List;
+
+public interface ItemRepositoryCustom {
+
+    List<ItemDto> findItemList(Long memberId, String cat);
+
+    List<ItemDto> findLikeItemList(Long memberId, String cat);
+
+}

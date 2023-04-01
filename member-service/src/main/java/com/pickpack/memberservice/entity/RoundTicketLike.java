@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed4bb27e55548b5b9459d1e472e52a252d510809d5fb19ffe67f2a21ad5cea2d
-size 582
+package com.pickpack.memberservice.entity;
+
+import javax.persistence.*;
+
+@Entity
+public class RoundTicketLike {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "round_ticket_like_id")
+    private Long id;
+
+    private Boolean isDelete;
+    private Integer wantedPrice;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private Ticket ticketTo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private Ticket ticketFrom;
+}
