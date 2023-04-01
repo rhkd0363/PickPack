@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b305dc65b56ae48d3913d7a89ac55dea75d10ce66a427a804abe74d310cd5dab
-size 352
+package com.pickpack.itemservice.api.response;
+
+import com.pickpack.itemservice.dto.item.ItemDetailDto;
+import com.pickpack.itemservice.dto.item.ItemListDto;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+public class ItemDetailRes {
+    Boolean isLike;
+    ItemDetailDto item;
+    List<ItemListDto> otherItems;
+}
