@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:70e221f87d029c8076f276c1a98aeacac66d74e158a0747e2171485f6c8b989b
-size 574
+package com.pickpack.flightservice.entity;
+
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
+public class OnewayTicketLike {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "oneway_ticket_like_id")
+    private Long id;
+    private Boolean isDelete;
+    private Integer wantedPrice;
+    private Long ticketId;
+    private Boolean isChange;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+}
+
