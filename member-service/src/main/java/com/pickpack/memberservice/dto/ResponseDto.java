@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b538cbeb700bab1da6cdc1ade9f0e9ae3910d9b6768f181b6dbc6a491e2dd3e
-size 287
+package com.pickpack.memberservice.dto;
+
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Getter
+public class ResponseDto<T> {
+
+    private final Integer code;     // 성공 1,  실패 -1
+    private final String msg;
+    private final T data;
+
+}

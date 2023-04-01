@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2fb7ee5807349347a243bb705b153d5bd67d912142c2d1412e39ba040ebd6bf0
-size 239
+package com.pickpack.memberservice.dto.item;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+@AllArgsConstructor
+public class CityDto {
+
+    private Long cityId;
+    private String cityName;
+}
