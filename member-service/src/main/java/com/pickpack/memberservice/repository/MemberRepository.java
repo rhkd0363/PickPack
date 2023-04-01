@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:314b81d3e7b1cd919d95ba1c98540f93043cfcb72501683f2b566235dfd4a3fa
-size 362
+package com.pickpack.memberservice.repository;
+
+import com.pickpack.memberservice.entity.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface MemberRepository extends JpaRepository<Member, Long> {
+    Optional<Member> findByNickname(String nickname);
+    Optional<Member> findByMid(String mid);
+
+
+}
