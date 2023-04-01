@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:872e330889f1055a10681a76f072de3af024c902de2a54794c0c5beb46ea4dcb
-size 513
+package com.pickpack.memberservice.entity;
+
+import javax.persistence.*;
+
+@Entity
+public class OnewayTicketLike {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "oneway_ticket_like_id")
+    private Long id;
+    private Boolean isDelete;
+    private Integer wantedPrice;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ticket_id")
+    private Ticket ticket;
+
+}
