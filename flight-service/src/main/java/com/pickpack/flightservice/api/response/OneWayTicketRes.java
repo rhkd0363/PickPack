@@ -1,18 +1,3 @@
-package com.pickpack.flightservice.api.response;
-
-import com.pickpack.flightservice.entity.Ticket;
-import lombok.*;
-
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
-public class OneWayTicketRes {
-    private boolean isLike;
-    private Ticket ticket;
-
-    @Builder
-    public OneWayTicketRes(boolean isLike, Ticket ticket) {
-        this.isLike = isLike;
-        this.ticket = ticket;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8f46f0b86d4ef8e1ac093c3cb59e244f7721c54959af658c75b981dfb7844be9
+size 414

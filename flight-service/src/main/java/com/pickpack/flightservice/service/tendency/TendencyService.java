@@ -1,18 +1,3 @@
-package com.pickpack.flightservice.service.tendency;
-
-import com.pickpack.flightservice.api.response.TendencyRes;
-import com.pickpack.flightservice.entity.Tendency;
-import com.pickpack.flightservice.repository.tendency.TendencyRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
-@Service
-@AllArgsConstructor
-public class TendencyService {
-    private final TendencyRepository tendencyRepository;
-
-    public TendencyRes getTendency(Long ticketId){
-        Tendency tendency = tendencyRepository.findByTicketId(ticketId);
-        return new TendencyRes(tendency.getAverage(), tendency.getChg(), tendency.getUpdown(), tendency.getPastPrices());
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6f677ff474912b104ab0d9b4ec549c7b5fe5b7b351b39653cd069e15c1aedde6
+size 693

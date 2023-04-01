@@ -1,25 +1,3 @@
-package com.pickpack.flightservice.entity;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
-@Entity
-@Getter
-@NoArgsConstructor
-public class Tendency {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tendency_id")
-    private Long id;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
-
-    private String pastPrices;
-    private Double average;
-    private Double chg;
-    private Integer updown;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:59be71a799def3d74afcc89836d55a505d48c2cdba0032b5ff4021b0ec0742e0
+size 523
