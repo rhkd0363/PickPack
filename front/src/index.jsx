@@ -1,28 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import persistStore from "redux-persist/es/persistStore";
-import { Provider } from "react-redux";
-import store from "./store/store";
-import { PersistGate } from "redux-persist/integration/react";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const persistor = persistStore(store);
-
-root.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PersistGate>
-  </Provider>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+version https://git-lfs.github.com/spec/v1
+oid sha256:be1b6aa2e27fd684636e4e469bcf26d167a7f579a65a8bcf75f1444ce78cddc6
+size 942
