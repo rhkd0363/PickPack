@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6f7d0f82a7e9db5e0ef70750baf8b427de853512bd6a5ecfa413ef525112896
-size 219
+package com.pickpack.itemservice.api.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.List;
+@Data
+@AllArgsConstructor
+public class ListRes {
+    Object results;
+    Boolean hasNext;
+
+}
