@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50da5a59b7a68356035546bd179d6a9b0a3f41585b744679b2be6b8b00650a41
-size 628
+//package com.pickpack.memberservice;
+//
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.scheduling.TaskScheduler;
+//import org.springframework.scheduling.annotation.EnableScheduling;
+//import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+//
+//@Configuration
+//@EnableScheduling
+//public class ScheduledConfig {
+//
+//    private final int POOL_SIZE = 10;
+//
+//    public TaskScheduler scheduler() {
+//        ThreadPoolTaskScheduler scheduler = new ThreadPoolTaskScheduler();
+//        scheduler.setPoolSize(POOL_SIZE);
+//        return scheduler;
+//    }
+//
+//}
