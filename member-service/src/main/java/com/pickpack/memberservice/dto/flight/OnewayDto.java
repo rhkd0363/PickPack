@@ -1,22 +1,3 @@
-package com.pickpack.memberservice.dto.flight;
-
-
-import com.pickpack.memberservice.entity.Ticket;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class OnewayDto {
-
-    private Boolean isLike;
-
-    private Integer wantedPrice;
-
-    private Ticket ticket;
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:873a7e04a27961d3c8598a3935cd9a689cb4803fcd6791b9b8ec4fd5ab3e278a
+size 382
