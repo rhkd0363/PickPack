@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d6d3c7941942a1b0e790555b7565266273e0836153618ed4a7795613570385f
-size 323
+package com.pickpack.memberservice.dto.flight;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class RoundwayWishPriceDto {
+
+    private Long roundwayTicketLikeId;
+
+    private Integer wishPrice;
+}
