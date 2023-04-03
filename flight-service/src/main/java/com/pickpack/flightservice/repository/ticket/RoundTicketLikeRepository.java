@@ -1,10 +1,3 @@
-package com.pickpack.flightservice.repository.ticket;
-
-import com.pickpack.flightservice.entity.Member;
-import com.pickpack.flightservice.entity.RoundTicketLike;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface RoundTicketLikeRepository extends JpaRepository<RoundTicketLike, Long> {
-    RoundTicketLike save(RoundTicketLike roundTicketLike);
-    RoundTicketLike findByTicketToIdAndTicketFromIdAndMember(Long ticketToId, Long ticketFromId, Member member);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:126ef3d4e4c7ba7c406cd4e19536a81f6dd6b46c52d4024609da83e1d68fb238
+size 489

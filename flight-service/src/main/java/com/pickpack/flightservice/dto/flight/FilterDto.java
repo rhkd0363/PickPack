@@ -1,12 +1,3 @@
-package com.pickpack.flightservice.dto.flight;
-
-import lombok.*;
-
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
-public class FilterDto {
-    private boolean[] direct = new boolean[4]; // [0] : 전체, [1] : 직항, [2] : 경유 1회, [3] : 경유 2회 이상
-    private int minPrice;
-    private int maxPrice;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9c3fed67d47150be481355de52cc2842d876a95ccee8510cb07f2733e0886276
+size 336
