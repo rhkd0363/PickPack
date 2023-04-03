@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02b06f87f093c8005f119e265c367fc2a6859e899667db4a9cb7011816169f17
-size 634
+package com.pickpack.chatservice.dto;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.pickpack.chatservice.entity.redis.RedisChatMessage;
+import lombok.Getter;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Getter
+public class ChatPagingReqDTO {
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate date;
+
+}

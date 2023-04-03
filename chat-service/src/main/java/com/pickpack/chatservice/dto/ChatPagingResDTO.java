@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0a731e9183fe3e791a62a3782c4cf1fa6f6cea7f6ea034c2ebd86a39a6dfd97
-size 771
+package com.pickpack.chatservice.dto;
+
+import com.pickpack.chatservice.entity.redis.RedisChatMessage;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Getter
+public class ChatPagingResDTO {
+    private int pageSize;
+    private LocalDate date;
+
+    private List<RedisChatMessage> chatMessages;
+
+    public static ChatPagingResDTO messageListToDto(List<RedisChatMessage> redisChatMessageList){
+        ChatPagingResDTO chatPagingResDTO = new ChatPagingResDTO();
+        chatPagingResDTO.date = redisChatMessageList.get(0).getTime().toLocalDate();
+        chatPagingResDTO.pageSize=redisChatMessageList.size();
+        chatPagingResDTO.chatMessages=redisChatMessageList;
+        return chatPagingResDTO;
+    }
+}
