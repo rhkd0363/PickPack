@@ -1,25 +1,3 @@
-package com.pickpack.memberservice.dto.member;
-
-import com.pickpack.memberservice.entity.Member;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class FindRespDto {
-
-    private Long memberId;
-    private String mid;
-    private String pwd;
-    private String nickname;
-    private String img_url;
-
-    public FindRespDto(Member member){
-        this.memberId = member.getId();
-        this.mid = member.getMid();
-        this.pwd = member.getPwd();
-        this.nickname = member.getNickname();
-        this.img_url = member.getImg_url();
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ee93bedb73b6fe44df0d8f2eee5bc75dce60085ba3dbdc1b7bb07150ac2b869e
+size 675
