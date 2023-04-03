@@ -1,16 +1,3 @@
-package com.pickpack.itemservice.dto.item;
-
-import lombok.Data;
-import lombok.Getter;
-
-@Data
-@Getter
-public class ItemCreateDto {
-    private Long memberId;
-    private String category;
-    private String itemName;
-    private  Integer price;
-    private String title;
-    private String content;
-    private Long cityId;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f9d63be88238273557873ffe6bbe4f3de36210e9c7d5dac41b97fdd2bb7dc65d
+size 324

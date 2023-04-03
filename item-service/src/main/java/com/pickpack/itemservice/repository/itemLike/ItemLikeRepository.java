@@ -1,12 +1,3 @@
-package com.pickpack.itemservice.repository.itemLike;
-
-import com.pickpack.itemservice.entity.ItemLike;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
-
-public interface ItemLikeRepository extends JpaRepository<ItemLike, Long> {
-    List<ItemLike> findByItemIdAndMemberIdAndIsDelete(Long itemId, Long memberId, Boolean delete);
-    List<ItemLike> findByItemIdAndMemberId(Long itemId, Long memberId);
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:055fa83db43cdd526296575390217162f37aa0ee39201268130251fe1cd65788
+size 441
