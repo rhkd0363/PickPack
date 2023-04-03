@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6b8c18921969af8b48304e3e6e11d0d11bd6ddcf1cce3eb385610ca0872d6ff
-size 326
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  roomId: null,
+};
+
+const chatSlice = createSlice({
+  name: "chat",
+  initialState,
+  reducers: {
+    setRoomId(state, action) {
+      state.roomId = action.payload;
+    },
+  },
+});
+
+export const chatAction = chatSlice.actions;
+export default chatSlice;
