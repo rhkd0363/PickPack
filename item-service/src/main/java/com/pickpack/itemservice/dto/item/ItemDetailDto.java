@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60ac9f208145f84165c1b4afe537ee767e31e0b342bdc3014838c2c254375471
-size 719
+package com.pickpack.itemservice.dto.item;
+
+import com.pickpack.itemservice.entity.Category;
+import com.pickpack.itemservice.entity.Item;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+import java.util.Objects;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ItemDetailDto {
+    private Long itemId;
+    private Long memberId;
+    private String nickname;
+    private String title;
+    private String content;
+    private Category category;
+    private Integer price;
+    private String itemName;
+    private String imgUrl;
+    private String registDate;
+    private Boolean isComplete;
+    private Long cityId;
+    private String cityName;
+
+}
