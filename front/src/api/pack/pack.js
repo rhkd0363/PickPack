@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2b67c8ccccd36a4fe318495795d299eee6722c347e794d9ef4dfad7ead5ef4a
-size 691
+import axiosInstance from "../axios";
+
+export const getItemList = (request) => {
+  console.log(request);
+  axiosInstance
+    .get(`item/${request.category}/${request.page}`)
+    .then((response) => {
+      console.log(response);
+
+      return response;
+    });
+};
+
+export const getItemListSearchByTitle = (request) => {
+  axiosInstance
+    .get(`item/${request.category}/title/${request.title}/${request.page}`)
+    .then((response) => {
+      console.log(response);
+    });
+};
+
+export const getItemListSearchByCity = (request) => {
+  axiosInstance
+    .get(`item/${request.category}/city/${request.cityId}/${request.page}`)
+    .then((response) => {
+      console.log(response);
+    });
+};
