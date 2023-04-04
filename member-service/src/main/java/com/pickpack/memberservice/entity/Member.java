@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce0c93c6c6abf3c669f4a4d9c01c3972203874bc0fd2799619d7dce40fba27b7
-size 1031
+package com.pickpack.memberservice.entity;
+
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
+@ToString
+public class Member implements Serializable {
+
+    @Column(name = "member_id")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String mid;
+    @Column(nullable = false, length = 20)
+    private String pwd;
+    private String nickname;
+    private String img_url;
+
+    @OneToMany(mappedBy = "member")
+    private List<OnewayTicketLike> onewayTicketLikeList;
+
+    @OneToMany(mappedBy = "member")
+    private List<RoundTicketLike> roundTicketLikeList;
+
+    @OneToMany(mappedBy = "member")
+    private List<MemberChatroom> memberChatroomList;
+
+    @OneToMany(mappedBy = "member")
+    private List<Item> itemList;
+
+    @OneToMany(mappedBy = "member")
+    private List<ItemLike> itemLikeList;
+
+    @OneToMany(mappedBy = "member")
+    private List<Soldout> soldoutList;
+
+
+}

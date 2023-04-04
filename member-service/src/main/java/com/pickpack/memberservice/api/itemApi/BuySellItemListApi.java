@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9873d2d30158c9e849b4748ac46b6eab830eae6d8f378a1784ecce8dae88a0f7
-size 460
+package com.pickpack.memberservice.api.itemApi;
+
+import com.pickpack.memberservice.dto.item.ItemDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.List;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class BuySellItemListApi implements Serializable {
+
+    private List<ItemDto> buyItemList;
+    private List<ItemDto> sellItemList;
+
+}
