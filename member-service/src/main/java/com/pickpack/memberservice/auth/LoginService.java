@@ -1,28 +1,3 @@
-package com.pickpack.memberservice.auth;
-
-//import com.netflix.discovery.converters.Auto;
-import com.pickpack.memberservice.entity.Member;
-import com.pickpack.memberservice.repository.MemberRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.InternalAuthenticationServiceException;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-
-@Service
-@RequiredArgsConstructor
-public class LoginService implements UserDetailsService {
-    private final MemberRepository memberRepository;
-
-    // 실제 DB에 존재하는 네임인지 판별 -> 내가 직접 찾는 함수 넣어줘야함.
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Member memberPS = memberRepository.findByMid(username).orElseThrow(
-                () -> new InternalAuthenticationServiceException("인증 실패")
-        );
-        System.out.println(memberPS.getMid()+" "+memberPS.getPwd());
-        return new LoginUser(memberPS);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a18afa6eda416aa0f09005bbd983c87d28b986b78c7a18477c7067f79fdccd70
+size 1308
