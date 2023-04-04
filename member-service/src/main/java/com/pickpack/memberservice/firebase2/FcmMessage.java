@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:886fe247d1f46a33336208cdac07403c3a94b712f90115e939ff351c19aa126d
-size 649
+package com.pickpack.memberservice.firebase2;
+
+import com.google.firebase.messaging.Message;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Builder
+@AllArgsConstructor
+@Getter
+public class FcmMessage {
+    private boolean validate_only;
+    private Message message;
+
+    @Builder
+    @AllArgsConstructor
+    @Getter
+    public static class Message {
+        private Notification notification;
+        private String token;
+    }
+    @Builder
+    @AllArgsConstructor
+    @Getter
+    public static class Notification {
+        private String title;
+        private String body;
+        private String image;
+    }
+
+}
