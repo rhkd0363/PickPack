@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd4873fc0a2dfca1262c3bc62f461036362eedf63b6a2a18f625809b36e267b8
-size 416
+package com.pickpack.chatservice.service.chat;
+
+import com.pickpack.chatservice.dto.ChatPagingResDto;
+import com.pickpack.chatservice.entity.redis.RedisChatMessage;
+
+import java.time.LocalDate;
+
+public interface ChatMessageService {
+    void createMessage(RedisChatMessage message);
+
+    void redisChatMessageWarming();
+
+    void sendMessageToDB();
+    ChatPagingResDto getMessages(String roomId, LocalDate page);
+}

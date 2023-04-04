@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8fe8703db2698042388670237670842efa654f72d4101b3df0b40cb4e1e7f8ae
-size 1763
+package com.pickpack.chatservice.controller;
+
+import com.pickpack.chatservice.dto.ChatPagingReqDto;
+import com.pickpack.chatservice.dto.ChatPagingResDto;
+import com.pickpack.chatservice.entity.redis.RedisChatMessage;
+import com.pickpack.chatservice.service.chat.ChatMessageService;
+import com.pickpack.chatservice.service.chat.pubsub.RedisPublisher;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.web.bind.annotation.*;
+
+@Slf4j
+@RequiredArgsConstructor
+@RestController
+//@RequestMapping("/api/chat")
+public class ChatController {
+    private final RedisPublisher redisPublisher;
+    private final ChatMessageService chatMessageService;
+
+    /**
+     * websocket "/pub/chat/message"로 들어오는 메시징을 처리한다.
+     */
+    @CrossOrigin("*")
+    @MessageMapping("/message")
+    //chat/pub/message
+    public void message(RedisChatMessage message) {
+        log.info("메시지 성공, 메시지 보낸 사람:{}",message.getSender());;
+        redisPublisher.publishMessage(message);
+    }
+
+    @GetMapping("/api/chat/message")
+    public ResponseEntity<ChatPagingResDto> getMessages(@RequestBody ChatPagingReqDto chatPagingReqDTO) {
+        log.info("roomId:{}, page(date):{}",chatPagingReqDTO.getRoomId(),chatPagingReqDTO.getDate());
+        return new ResponseEntity<>(chatMessageService.getMessages(chatPagingReqDTO.getRoomId(),chatPagingReqDTO.getDate()), HttpStatus.OK);
+    }
+    //TODO 페이징처리!!!!!!!!!!!!!!!
+
+    @GetMapping("/chat/check")
+    public String check(){
+        return("check 성공이어유");
+    }
+}
