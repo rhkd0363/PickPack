@@ -1,3 +1,95 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecdbc32070b651f3239dc6cdbab99d42814011eecce9a79d43398f65dbfd7467
-size 1710
+import styled from "styled-components";
+import SearchTicket from "./elements/SearchTicket";
+import WorldMap from "./elements/WorldMap";
+import mainBanner from "../../../assets/image/mainBanner.png";
+import TourList from "./elements/TourList";
+import { useState } from "react";
+import store from "../../../store/store";
+
+const Main = () => {
+  const flight = store.getState().flight;
+
+  const [tourItem, setTourItem] = useState(null);
+  const [tourContinent, setTourContinent] = useState("Europe");
+  const [departure, setDeparture] = useState(null);
+  const [destination, setDestination] = useState(null);
+  const [criterion, setCriterion] = useState(flight.criterion);
+
+  return (
+    <>
+      <FistSection>
+        <div className="greetings-section">
+          <div>안녕하세요</div>
+        </div>
+        <div className="search-section">
+          <SearchTicket
+            departure={departure}
+            destination={destination}
+            criterion={criterion}
+            setCriterion={setCriterion}
+          />
+        </div>
+      </FistSection>
+      <SecondSection>
+        <WorldMap
+          tourItem={tourItem}
+          tourContinent={tourContinent}
+          setDeparture={setDeparture}
+          setDestination={setDestination}
+          criterion={criterion}
+        />
+      </SecondSection>
+      <ThirdSection>
+        <TourList
+          setTourItem={setTourItem}
+          setTourContinent={setTourContinent}
+          tourContinent={tourContinent}
+        />
+      </ThirdSection>
+    </>
+  );
+};
+
+const FistSection = styled.div`
+  text-align: center;
+  height: 400px;
+  background: url(${mainBanner});
+  background-size: cover;
+  padding: 48px 0;
+  margin-bottom: 48px;
+
+  .greetings-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div {
+      width: 1200px;
+      margin: 0 20px;
+      height: 116px;
+      color: #ffffff;
+      margin-bottom: 44px;
+    }
+  }
+
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const SecondSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ThirdSection = styled.div`
+  display: flex;
+
+  height: 600px;
+  justify-content: center;
+`;
+
+export default Main;
