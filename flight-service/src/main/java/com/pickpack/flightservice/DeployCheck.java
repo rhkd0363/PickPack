@@ -1,15 +1,3 @@
-package com.pickpack.flightservice;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-@RequestMapping("/api/flight/")
-public class DeployCheck {
-
-    @GetMapping("/check")
-    public String welcomeCheck(){
-        return "welcome to the 🚀 flight-service";
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e65cc89e664d93d046be2e2efa129a5488341e6364f74e9911b13fb1b49f752b
+size 420
