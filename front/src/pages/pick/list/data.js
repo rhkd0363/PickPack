@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6160823cdb714b3b9e1920b3324e0806ec1c734c952588461423add8ed3377bb
-size 25431
+const airlineData = [
+    {
+      airline: "가루다인도네시아항공",
+      color: "rgb(19,150,168)",
+      image: garudaIndonesia,
+    },
+    {
+      airline: "길상항공",
+      color: "rgb(176,54,66)",
+      image: gilsang,
+    },
+    {
+      airline: "대한항공",
+      color: "rgb(181,237,254)",
+      image: korean,
+    },
+    {
+      airline: "델타항공",
+      color: "rgb(255,255,255)",
+      image: delta,
+    },
+  ];
+
+  export {airlineData};
