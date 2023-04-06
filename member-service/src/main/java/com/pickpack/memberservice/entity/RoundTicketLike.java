@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62caaf6560bc58483ef80ba9e8f43fa46cc0bf9abfbcc0f2cc8b324809ca48d1
-size 809
+package com.pickpack.memberservice.entity;
+
+import lombok.Getter;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+public class RoundTicketLike {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "round_ticket_like_id")
+    private Long id;
+
+    private Boolean isDelete;
+    private Boolean isChange;
+
+    private Integer wantedPrice;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private Ticket ticketTo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private Ticket ticketFrom;
+
+    public void changeIsDelete(){
+        this.isDelete = !isDelete;
+    }
+
+    public void changeWishPrice(Integer price){
+        this.wantedPrice = price;
+    }
+}

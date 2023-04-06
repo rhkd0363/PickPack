@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e7c2b880c3cbf68d7f6d59df79410ac97bb6d5484a39549a78ac7d99de8ad90
-size 267
+package com.pickpack.memberservice.firebase2;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+@Builder
+public class ResponseDto {
+
+    private Integer onewayLikeCount;
+    private Integer roundwayLikeCount;
+
+}
