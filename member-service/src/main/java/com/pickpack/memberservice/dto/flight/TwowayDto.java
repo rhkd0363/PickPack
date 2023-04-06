@@ -1,29 +1,3 @@
-package com.pickpack.memberservice.dto.flight;
-
-
-import com.pickpack.memberservice.entity.Ticket;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.Transient;
-import java.io.Serializable;
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class TwowayDto  implements Serializable {
-
-    private Boolean isLike;
-
-    private Integer wantedPrice;
-
-    private Ticket goWay;
-
-    private Ticket returnWay;
-
-    private Integer totalPrice;
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ba594c2f48adbf882d12990ab85b5b288e189a3cc67d6fd2ef4ac5bd7382f5e
+size 566

@@ -1,24 +1,3 @@
-package com.pickpack.memberservice.dto.flight;
-
-
-import com.pickpack.memberservice.entity.Ticket;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class OnewayDto implements Serializable {
-
-    private Boolean isLike;
-
-    private Integer wantedPrice;
-
-    private Ticket ticket;
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1bde19f3cac80e0fec7eac60e26c655af6ea2e9a66f36b1a003cf1553728625e
+size 464
