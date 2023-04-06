@@ -1,31 +1,3 @@
-package com.pickpack.chatservice.dto;
-
-import com.pickpack.chatservice.entity.redis.RedisChatRoom;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
-
-@Getter
-@NoArgsConstructor
-public class GetRoomDto {
-    private String chatRoomId;
-    private Long itemId;
-    private String imgUrl;
-    private String lastMessage;
-    private LocalDateTime lastMessageTime;
-    private String nickName;
-    private boolean isNew;
-
-    public GetRoomDto chatRoomToGetRoomDto(RedisChatRoom redisChatRoom, String memberId){
-        GetRoomDto getRoomDto = new GetRoomDto();
-        getRoomDto.chatRoomId= redisChatRoom.getRoomId();
-        getRoomDto.itemId= redisChatRoom.getItemId();
-        getRoomDto.imgUrl= redisChatRoom.getImgUrl();
-        getRoomDto.lastMessageTime=redisChatRoom.getLastMessageTime();
-        getRoomDto.lastMessage= redisChatRoom.getLastMessage();
-        getRoomDto.isNew= redisChatRoom.isNew();
-        getRoomDto.nickName = redisChatRoom.getSeller().equals(memberId)? redisChatRoom.getBuyer(): redisChatRoom.getSeller();
-        return getRoomDto;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c78f4d8b304c3f7d88bb3f4ee0cbd67a7b4069659d139a758602f0d1973c3b90
+size 1200
