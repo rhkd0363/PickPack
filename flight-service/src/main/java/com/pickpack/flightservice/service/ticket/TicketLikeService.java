@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21d52f000918bc639560e885939ac941a1caf34a5042ed6dc0674b360c09e77f
-size 495
+package com.pickpack.flightservice.service.ticket;
+
+import com.pickpack.flightservice.api.request.OnewayTicketLikeReq;
+import com.pickpack.flightservice.api.request.RoundTicketLikeReq;
+
+public interface TicketLikeService {
+    void likeOnewayTicket(OnewayTicketLikeReq onewayTicketLikeReq);
+    void unlikeOnewayTicket(OnewayTicketLikeReq onewayTicketLikeReq);
+    void likeRoundTicket(RoundTicketLikeReq roundTicketLikeReq);
+    void unlikeRoundTicket(RoundTicketLikeReq roundTicketLikeReq);
+}

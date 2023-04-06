@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03eaf903cb91f99bb887c521e2f6f32f2c3dfdef5bc9759be5fc9b814f679fea
-size 282
+package com.pickpack.flightservice.dto.tendency;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Data
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TendencyInfoDto {
+    String date;
+    Integer price;
+}
