@@ -1,16 +1,3 @@
-package com.pickpack.itemservice.api.response;
-
-import com.pickpack.itemservice.dto.item.ItemDetailDto;
-import com.pickpack.itemservice.dto.item.ItemListDto;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import java.util.List;
-
-@Data
-@AllArgsConstructor
-public class ItemDetailRes {
-    Boolean isLike;
-    ItemDetailDto item;
-    List<ItemListDto> otherItems;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:33a6d17dbf7f412c1c5738d694100bc78972db5108b6314ad5ec3647ec24a5e0
+size 372
