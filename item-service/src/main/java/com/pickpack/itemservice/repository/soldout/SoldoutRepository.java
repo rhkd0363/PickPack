@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49fb71f7cac2a6a121e98179c0687145b470949796ae0872117a7c1568a80739
-size 241
+package com.pickpack.itemservice.repository.soldout;
+
+import com.pickpack.itemservice.entity.Soldout;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SoldoutRepository extends JpaRepository<Soldout, Long> {
+}

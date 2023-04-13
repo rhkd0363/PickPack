@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ee7325b97e8f8b697b106cfb5cf222622f6c04c82021c7f098b3a52b89b15d7
-size 138
+FROM openjdk:17-ea-11-jdk-slim
+VOLUME /tmp
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"] 

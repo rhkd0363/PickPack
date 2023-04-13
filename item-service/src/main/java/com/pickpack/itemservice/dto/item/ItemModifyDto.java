@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:785f1f775ded2b03355e091ddc936ea4a72b2f3525c2ef339b6ee09098d88ec7
-size 351
+package com.pickpack.itemservice.dto.item;
+
+import lombok.Data;
+import lombok.Getter;
+
+@Data
+@Getter
+public class ItemModifyDto {
+    private Long memberId;
+    private String category;
+    private String itemName;
+    private  Integer price;
+    private String title;
+    private String content;
+    private Long cityId;
+    private String imgUrl;
+}
