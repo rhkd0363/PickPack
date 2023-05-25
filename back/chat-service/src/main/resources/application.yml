@@ -43,15 +43,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-#cloud:
-#  aws:
-#    s3:
-#      bucket: travelmaker2
-#    #TODO CloudFormation
-#    stack.auto: false
-#    region.static: ap-northeast-2
-#    credentials:
-#      accessKey: AKIAXDB4L5CHN5CQPZHG
-#      secretKey: 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
 server:
   port: 9090
